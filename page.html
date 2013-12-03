@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<iframe src="page2.html" id="J-iframe" style="width:800px;height:200px;"></iframe>
+<script type="text/javascript">
+	window.onload = function(){
+		var win = document.getElementById('J-iframe').contentWindow;
+		win.postMessage("hello there!", "http://example.org");
+	};
+	
+
+</script>
+</body>
+</html>
