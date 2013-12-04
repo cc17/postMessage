@@ -5,12 +5,25 @@
 </head>
 <body>
 <iframe src="page2.html" id="J-iframe" style="width:800px;height:200px;"></iframe>
+<form method="" action="" submit="" id="form">
+   <input type="text"  name="val" id="msg"/>
+   <input type="submit" id="btn"/>
+</form>
 <script type="text/javascript">
-	window.onload = function(){
-		var win = document.getElementById('J-iframe').contentWindow;
-		win.postMessage("hello there!", "http://example.org");
-	};
-	
+        window.onload = function(){
+                var $  = function(id){
+                    return document.getElementById(id);
+                };
+                var msg = $('msg');
+                var form = $('form');
+                form.addEventListener('submit',function(e){
+                     e.preventDefault();
+                     var val = msg.value;
+                     var win = document.getElementById('J-iframe').contentWindow;
+                win.postMessage(val, "http://localhost/~irou/");
+                },false);
+        };
+
 
 </script>
 </body>

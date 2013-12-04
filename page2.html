@@ -6,8 +6,8 @@
 <body>
 	这是iframe内容
 	<script type="text/javascript">
-		function handleMessage(msg){
-			alert(msg);
+		function handleMessage(event){
+			alert(event.data);
 		};
 		window.addEventListener('message',handleMessage,false);
 	</script>
