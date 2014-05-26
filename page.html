@@ -20,7 +20,7 @@
                 var form = $('form');
                 form.addEventListener('submit',function(e){
                      e.preventDefault();
-                     var val = msg.value;
+                     var val = msg.value || '' ;
                      var win = document.getElementById('J-iframe').contentWindow;
                 win.postMessage(val, "http://localhost/~irou/");
                 },false);
