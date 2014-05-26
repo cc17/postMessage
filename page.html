@@ -12,7 +12,6 @@
 <script type="text/javascript">
 
         window.onload = function(){
-                //test
                 var $  = function(id){
                     return document.getElementById(id);
                 };
@@ -20,7 +19,7 @@
                 var form = $('form');
                 form.addEventListener('submit',function(e){
                      e.preventDefault();
-                     var val = msg.value || '' ;
+                     var val = msg.value || 'test';
                      var win = document.getElementById('J-iframe').contentWindow;
                 win.postMessage(val, "http://localhost/~irou/");
                 },false);
